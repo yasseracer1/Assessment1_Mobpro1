@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -63,12 +64,27 @@ fun MainScreen() {
 fun ScreenContent(modifier: Modifier) {
     var note by remember { mutableStateOf("") }
 
-    val radioOptions = listOf(
+    val susuOptions = listOf(
         stringResource(id = R.string.coklat),
         stringResource(id = R.string.putih)
     )
 
-    var susu by rememberSaveable { mutableStateOf(radioOptions[0]) }
+    val rasaOptions = listOf(
+        stringResource(id = R.string.strawberry),
+        stringResource(id = R.string.raspberry),
+        stringResource(id = R.string.blueberry),
+        stringResource(id = R.string.pisang)
+    )
+
+    val checkBox = listOf(
+        stringResource(id = R.string.keju),
+        stringResource(id = R.string.almond),
+        stringResource(id = R.string.meses)
+    )
+
+    var susu by rememberSaveable { mutableStateOf(susuOptions[0]) }
+    var rasa by rememberSaveable { mutableStateOf(rasaOptions[0]) }
+    var topping by rememberSaveable { mutableStateOf(checkBox[0]) }
 
     Column (
         modifier = modifier
@@ -86,8 +102,8 @@ fun ScreenContent(modifier: Modifier) {
                 .padding(top = 6.dp)
                 .border(1.dp, Color.Gray, RoundedCornerShape(4.dp))
         ) {
-            radioOptions.forEach {text ->
-                RasaOption(
+            susuOptions.forEach {text ->
+                SusuOption(
                     label = text,
                     isSelected = susu == text,
                     modifier = Modifier
@@ -101,6 +117,55 @@ fun ScreenContent(modifier: Modifier) {
                 )
             }
         }
+        Text(
+            text = stringResource(id = R.string.rasa),
+            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Column (
+            modifier = Modifier
+                .padding(top = 6.dp)
+                .border(1.dp, Color.Gray, RoundedCornerShape(4.dp))
+        ) {
+            rasaOptions.forEach {text ->
+                RasaOption(
+                    label = text,
+                    isSelected = rasa == text,
+                    modifier = Modifier
+                        .selectable(
+                            selected = rasa == text,
+                            onClick = { rasa = text },
+                            role = Role.RadioButton
+                        )
+                        .padding(16.dp)
+                )
+            }
+        }
+        Text(
+            text = stringResource(id = R.string.topping),
+            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Column (
+            modifier = Modifier
+                .padding(top = 6.dp)
+                .border(1.dp, Color.Gray, RoundedCornerShape(4.dp))
+        ) {
+            checkBox.forEach {text ->
+                ToppingOption(
+                    label = text,
+                    isSelected = topping == text,
+                    modifier = Modifier
+                        .selectable(
+                            selected = topping == text,
+                            onClick = { topping = text },
+                            role = Role.Checkbox
+                        )
+                        .padding(16.dp)
+                )
+            }
+        }
+
         OutlinedTextField(
             value = note,
             onValueChange = { note = it },
@@ -115,12 +180,44 @@ fun ScreenContent(modifier: Modifier) {
 }
 
 @Composable
+fun SusuOption(label: String, isSelected: Boolean, modifier: Modifier) {
+    Row (
+        modifier = modifier,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        RadioButton(selected = isSelected, onClick = null)
+        Text(
+            text = label,
+            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier.padding(start = 8.dp)
+        )
+
+    }
+}
+
+@Composable
 fun RasaOption(label: String, isSelected: Boolean, modifier: Modifier) {
     Row (
         modifier = modifier,
         verticalAlignment = Alignment.CenterVertically
     ) {
         RadioButton(selected = isSelected, onClick = null)
+        Text(
+            text = label,
+            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier.padding(start = 8.dp)
+        )
+
+    }
+}
+
+@Composable
+fun ToppingOption(label: String, isSelected: Boolean, modifier: Modifier) {
+    Row (
+        modifier = modifier,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Checkbox(checked = isSelected, onCheckedChange = null)
         Text(
             text = label,
             style = MaterialTheme.typography.bodyLarge,

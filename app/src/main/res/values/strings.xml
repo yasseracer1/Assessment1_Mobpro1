@@ -1,7 +1,20 @@
 <resources>
     <string name="app_name">Pesan Crepes</string>
     <string name="intro">Silahkan membuat pesanan crepes sesuai dengan keinginan anda</string>
+
     <string name="coklat">Coklat</string>
     <string name="putih">Putih</string>
+
+    <string name="rasa">Pilih buah :</string>
+    <string name="strawberry">Strawberry</string>
+    <string name="raspberry">Raspberry</string>
+    <string name="blueberry">Blueberry</string>
+    <string name="pisang">Pisang</string>
+
+    <string name="topping">Pilih topping :</string>
+    <string name="keju">Keju</string>
+    <string name="almond">Almond</string>
+    <string name="meses">Meses</string>
+
     <string name="note">Note :</string>
 </resources>
