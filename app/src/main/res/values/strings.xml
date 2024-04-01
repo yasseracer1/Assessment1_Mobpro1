@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Pesan Crepes</string>
     <string name="intro">Silahkan membuat pesanan crepes sesuai dengan keinginan anda</string>
+    <string name="coklat">Coklat</string>
+    <string name="putih">Putih</string>
     <string name="note">Note :</string>
 </resources>
