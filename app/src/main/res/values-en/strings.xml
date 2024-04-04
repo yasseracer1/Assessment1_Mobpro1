@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pesan Crepes</string>
+    <string name="intro">Please order crepes according to your wishes</string>
+    <string name="susu">Choose milk :</string>
+    <string name="coklat">Chocolate</string>
+    <string name="putih">White</string>
+    <string name="rasa">Choose fruit :</string>
+    <string name="strawberry">Strawberry</string>
+    <string name="raspberry">Raspberry</string>
+    <string name="blueberry">Blueberry</string>
+    <string name="pisang">Banana</string>
+    <string name="topping">Choose toppings :</string>
+    <string name="keju">Cheese</string>
+    <string name="almond">Almond</string>
+    <string name="meses">Meses</string>
+    <string name="note">Note :</string>
+    <string name="nama">Name :</string>
+    <string name="input_invalid">Can not be empty.</string>
+    <string name="pesan">Order</string>
+    <string name="pesanan">Order Name : %1$s</string>
+    <string name="bagikan_template">Order Name : %1$s</string>
+    <string name="bagikan">Share</string>
+    <string name="kembali">Back</string>
+    <string name="tentang_aplikasi">About Aplication</string>
+    <string name="deskripsi_aplikasi">The Crepes Ordering Application was created to make it easier for sellers to record their customers\' orders.</string>
+    <string name="copyright">Copyright © 2024 Yasser Abdulah Ramadhan</string>
+    <string name="crepes">This is a picture of crepes</string>
+    <string name="crepes">-> Toppings : %4$s</string>
+</resources>
