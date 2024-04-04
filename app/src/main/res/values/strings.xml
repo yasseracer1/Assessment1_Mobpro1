@@ -2,6 +2,7 @@
     <string name="app_name">Pesan Crepes</string>
     <string name="intro">Silahkan membuat pesanan crepes sesuai dengan keinginan anda</string>
 
+    <string name="susu">Pilih susu :</string>
     <string name="coklat">Coklat</string>
     <string name="putih">Putih</string>
 
@@ -17,4 +18,12 @@
     <string name="meses">Meses</string>
 
     <string name="note">Note :</string>
+    <string name="nama">Nama :</string>
+
+    <string name="input_invalid">Tidak boleh kosong.</string>
+
+    <string name="pesan">Pesan</string>
+    <string name="pesanan">Nama Pemesan : %1$s\n\nPesanan\n-> Susu : %2$s\n-> Rasa : %3$s\n-> Topping : %4$s\n\nNote : %5$s</string>
+    <string name="bagikan_template">Nama Pemesan : %1$s\n\nPesanan\n-> Susu : %2$s\n-> Rasa : %3$s\n-> Topping : %4$s\n\nNote : %5$s</string>
+    <string name="bagikan">Bagikan</string>
 </resources>
