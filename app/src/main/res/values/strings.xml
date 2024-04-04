@@ -26,4 +26,12 @@
     <string name="pesanan">Nama Pemesan : %1$s\n\nPesanan\n-> Susu : %2$s\n-> Rasa : %3$s\n-> Topping : %4$s\n\nNote : %5$s</string>
     <string name="bagikan_template">Nama Pemesan : %1$s\n\nPesanan\n-> Susu : %2$s\n-> Rasa : %3$s\n-> Topping : %4$s\n\nNote : %5$s</string>
     <string name="bagikan">Bagikan</string>
+
+    <string name="kembali">Kembali</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="deskripsi_aplikasi">Aplikasi Pemesanan Crepes dibuat untuk mempermudah penjual dalam mencatat pemesanan para pelanggannya.</string>
+    <string name="copyright">Copyright © 2024 Yasser Abdulah Ramadhan\nAll right reserved.</string>
+
+    <string name="crepes">Ini gambar crepes</string>
+
 </resources>
