@@ -65,6 +65,12 @@ fun AboutScreen(navController: NavHostController) {
                     .padding(16.dp).
                     fillMaxWidth()
             )
+            Image(
+                painter = painterResource(id = R.drawable.crepes),
+                contentDescription = stringResource(R.string.crepes),
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.size(250.dp)
+            )
             Text(
                 text = stringResource(id = R.string.copyright),
                 modifier = Modifier
