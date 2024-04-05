@@ -86,7 +86,9 @@ fun MainScreen(navController: NavHostController) {
 
 @Composable
 fun ScreenContent(modifier: Modifier) {
-    var note by rememberSaveable { mutableStateOf("") }
+    var catatan by rememberSaveable { mutableStateOf("") }
+    var catatanNull by rememberSaveable { mutableStateOf(false) }
+    var catatanKosong by rememberSaveable { mutableStateOf("") }
 
     var nama by rememberSaveable { mutableStateOf("") }
     var namaError by rememberSaveable { mutableStateOf(false) }
@@ -219,9 +221,9 @@ fun ScreenContent(modifier: Modifier) {
             }
         }
         OutlinedTextField(
-            value = note,
-            onValueChange = { note = it },
-            label = { Text(text = stringResource(id = R.string.note)) },
+            value = catatan,
+            onValueChange = { catatan = it },
+            label = { Text(text = stringResource(id = R.string.catatan)) },
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Text,
                 imeAction = ImeAction.Done
@@ -231,9 +233,13 @@ fun ScreenContent(modifier: Modifier) {
         Button(
             onClick = {
                 namaError = (nama == "")
-                if (namaError) return@Button
+                catatanNull = (catatan == "")
+                catatanKosong = "-"
 
-                pesan = context.getString(R.string.pesanan, nama, susu, rasa, topping, note)
+                if (namaError) return@Button
+                if (catatanNull) catatan = catatanKosong
+
+                pesan = context.getString(R.string.pesanan, nama, susu, rasa, topping, catatan)
             },
 
             modifier = Modifier.padding(top = 8.dp),
@@ -256,7 +262,7 @@ fun ScreenContent(modifier: Modifier) {
                     shareData(
                         context = context,
                         message = context.getString(R.string.bagikan_template,
-                            nama, susu, rasa, topping, note)
+                            nama, susu, rasa, topping, catatan)
                     )
                 },
                 modifier = Modifier.padding(top = 8.dp),
